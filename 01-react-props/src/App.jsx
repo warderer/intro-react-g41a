@@ -7,6 +7,7 @@ import tres from './assets/img/tres.jpg'
 import cuatro from './assets/img/cuatro.jpg'
 import cinco from './assets/img/cinco.jpg'
 import seis from './assets/img/seis.jpg'
+import Info from './components/Info'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
         </svg>
       </div>
     </header>
+
     <section className="wave-contenedor website">
       <img src={ilustracion1} alt="" />
       <div className="contenedor-textos-main">
@@ -45,12 +47,9 @@ function App() {
         </a>
       </div>
     </section>
-    <section className="info">
-      <div className="contenedor">
-        <h2 className="titulo left">Juntos podemos apoyar</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      </div>
-    </section>
+
+    <Info />
+
     <section className="cards contenedor">
       <h2 className="titulo">Our services</h2>
       <div className="content-cards">
@@ -80,6 +79,7 @@ function App() {
         </article>
       </div>
     </section>
+
     <section className="galeria">
       <div className="contenedor">
         <h2 className="titulo">Our work</h2>
