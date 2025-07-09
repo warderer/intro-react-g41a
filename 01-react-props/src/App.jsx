@@ -3,8 +3,9 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
+function App(props) {
   const [count, setCount] = useState(0)
+  console.log(props)
 
   return (
     <>
@@ -16,7 +17,8 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Hola G41A, esto es React</h1>
+      { console.log('Hola G41A, esto es JS dentro del JSX') }
+      <h1>{props.saludo} {props.title}</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           El Contador es {count}
@@ -28,6 +30,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <section></section>
     </>
   )
 }
