@@ -1,9 +1,9 @@
-const Info = () => {
+const Info = ({ title, desc }) => {
   return (
     <section className="info">
         <div className="contenedor">
-            <h2 className="titulo left">Juntos podemos apoyar</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <h2 className="titulo left">{title}</h2>
+            <p>{desc}</p>
         </div>
     </section>
   )

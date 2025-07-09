@@ -48,7 +48,7 @@ function App() {
       </div>
     </section>
 
-    <Info />
+    <Info title='Juntos podemos apoyar' desc='lorep ipsum'/>
 
     <section className="cards contenedor">
       <h2 className="titulo">Our services</h2>
@@ -93,6 +93,9 @@ function App() {
         </article>
       </div>
     </section>
+
+    <Info title='Los proyectos más Cool' desc='Mira lo que hemos hecho'/>
+
     <section className="info-last">
       <div className="contenedor last-section">
         <div className="contenedor-textos-main">
