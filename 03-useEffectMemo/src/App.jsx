@@ -56,7 +56,31 @@ function App () {
 
   return (
     <>
-
+      <div style={estilo}>
+        <h1>Lista de Usuarios</h1>
+        <input
+          type='text'
+          placeholder='Buscar usuario...'
+          value={busqueda}
+          onChange={(e) => setBusqueda(e.target.value)}
+        />
+        <button onClick={() => setTema(tema === 'light' ? 'dark' : 'light')}>
+          Cambiar Tema
+        </button>
+        {cargando
+          ? (
+            <p>Cargando usuarios...</p>
+            )
+          : (
+            <ul>
+              {usuariosFiltrados.map((usuario) => (
+                <li key={usuario.id}>
+                  {usuario.nombre} - {usuario.pais}
+                </li>
+              ))}
+            </ul>
+            )}
+      </div>
     </>
   )
 }
