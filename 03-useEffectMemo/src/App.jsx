@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import './App.css'
 
 function App () {
@@ -37,6 +37,22 @@ function App () {
         setCargando(false)
       })
   }, []) // El arreglo vacio significa que solo se ejecuta una vez, en la primera carga del componente
+
+  // useMemo para optimizar la busqueda de usuarios
+  const usuariosFiltrados = useMemo(() => {
+    console.log('MEMO: Filtrando usuarios...')
+    return usuarios.filter((usuario) =>
+      usuario.nombre.toLowerCase().includes(busqueda.toLowerCase())
+    )
+  }, [usuarios, busqueda]) // Se ejecuta cuando usuarios o busqueda cambian
+
+  const estilo = {
+    backgroundColor: tema === 'light' ? '#fff' : '#333',
+    color: tema === 'light' ? '#000' : '#fff',
+    padding: '20px',
+    borderRadius: '5px',
+    transition: 'all 0.3s ease',
+  }
 
   return (
     <>
