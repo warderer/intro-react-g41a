@@ -1,0 +1,11 @@
+body {
+  font-family: system-ui, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
