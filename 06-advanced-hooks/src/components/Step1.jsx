@@ -1,12 +1,10 @@
-// TODO: Importar useRef de React
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 function Step1 ({ formData, handleFieldChange, nextStep }) {
-  // TODO: Llamar a inputRef
+  const nameInputRef = useRef(null)
 
-  //
   useEffect(() => {
-    // TODO: Enfoca el primer campo de entrada (nameInputRef) cuando el componente se monta
+    nameInputRef.current.focus()
   }, [])
 
   const canProceed = formData.name && formData.email
@@ -20,7 +18,7 @@ function Step1 ({ formData, handleFieldChange, nextStep }) {
           type='text'
           id='name'
           name='name'
-          ref='ASIGNAMOS LA REFERENCIA AQUI'
+          ref={nameInputRef}
           value={formData.name}
           onChange={handleFieldChange}
           placeholder='Ej: César Guerra'

@@ -1,11 +1,10 @@
-// TODO: Importar useRef de React
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 function Step2 ({ formData, handleFieldChange, prevStep, nextStep }) {
-  // TODO: Llamar a inputRef
+  const passwordInputRef = useRef(null)
 
   useEffect(() => {
-    // TODO: Enfoca el primer campo de entrada (passwordInputRef) cuando el componente se monta
+    passwordInputRef.current.focus()
   }, [])
 
   const canProceed = formData.password.length >= 8
@@ -19,7 +18,7 @@ function Step2 ({ formData, handleFieldChange, prevStep, nextStep }) {
           type='password'
           id='password'
           name='password'
-          ref='ASIGNAMOS LA REFERENCIA AQUI'
+          ref={passwordInputRef}
           value={formData.password}
           onChange={handleFieldChange}
           placeholder='Mínimo 8 caracteres'
