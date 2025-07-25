@@ -1,0 +1,124 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.form-container {
+  background-color: #ffffff;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-step {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  color: #1c1e21;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #4b4f56;
+}
+
+input {
+  padding: 0.8rem;
+  border: 1px solid #dddfe2;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  border-color: #1877f2;
+  box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+  outline: none;
+}
+
+.form-group small {
+    color: #c0392b;
+    margin-top: 0.25rem;
+}
+
+.form-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.form-navigation button {
+  flex-grow: 1;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  background-color: #1877f2;
+  color: white;
+}
+
+.form-navigation button.secondary {
+  background-color: #e4e6eb;
+  color: #4b4f56;
+}
+
+.form-navigation button:disabled {
+  background-color: #a0b3d6;
+  cursor: not-allowed;
+}
+
+.form-navigation button:not(:disabled):hover {
+  filter: brightness(1.1);
+}
+
+.success {
+  text-align: center;
+}
+
+.summary {
+  background-color: #f0f2f5;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.summary p {
+  margin: 0.5rem 0;
+}
