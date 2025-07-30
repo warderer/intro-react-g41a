@@ -1,6 +1,15 @@
 const Navbar = () => {
   return (
-    <h1>Navbar</h1>
+    <nav className='navbar'>
+      <ul>
+        <li>
+          <a href='/'>Home</a>
+        </li>
+        <li>
+          <a href='/characters'>Personajes</a>
+        </li>
+      </ul>
+    </nav>
   )
 }
 export default Navbar
