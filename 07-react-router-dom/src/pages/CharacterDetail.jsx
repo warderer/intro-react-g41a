@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 
 const CharacterDetail = () => {
-  const id = 1 // TODO: Hacer dinámico por medio de useParams
-  // TODO: Hacer uso del hook useNavigate
+  const { id } = useParams()
+  const navigate = useNavigate()
 
   const [character, setCharacter] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -23,7 +24,10 @@ const CharacterDetail = () => {
     fetchCharacter()
   }, [id])
 
-  // TODO: Declarar función para regresar de manera programatica
+  const handleGoBack = () => {
+    navigate('/characters')
+    // También podrías usar navigate(-1) para regresar a la página anterior
+  }
 
   if (loading) return <p>Cargando detalle...</p>
   if (!character) return <p>Personaje no encontrado.</p>
@@ -38,7 +42,7 @@ const CharacterDetail = () => {
         <p><strong>Género:</strong> {character.gender}</p>
         <p><strong>Origen:</strong> {character.origin.name}</p>
       </div>
-      {/* TODO: Implementar botón de manera programatica con useNavigate */}
+      <button onClick={handleGoBack} className='btn-back'>Volver a Personajes</button>
     </div>
   )
 }
